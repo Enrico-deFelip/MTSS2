@@ -1,7 +1,7 @@
 # **Istruzioni dei set-up**
 
 ### 1. **Link per la connessione al reposytory tramite SSH**
-git@github.com:{**Nome-utente**}/MTSS2.git<br><br>
+git@github.com:Enrico-deFelip/MTSS2.git<br><br>
 
 ### 2. **Configurazione di git flow adottata**
 Branch name for production releases: [master] main<br>
