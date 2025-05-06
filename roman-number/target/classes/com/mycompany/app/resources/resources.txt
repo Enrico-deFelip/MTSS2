@@ -1,2 +1,2 @@
 aggiungere a questa cartella tutte le risorse esterne necessarie per
-far funzionare l'applicazione
+far funzionare l'applicazione.
