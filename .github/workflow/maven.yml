@@ -15,14 +15,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Configura la JDK nella VM 
+      # Configura la JDK nella VM
       - name: Set up JDK 20
         uses: actions/setup-java@v2
         with:
           java-version: '20'
 
+      # Esecuzione del processo di build con Maven
       - name: Build with Maven
-        run: mvn clean install -DskipTests=true
+        run: mvn clean install --fail-fast --batch-mode --show-version --errors --quiet --file pom.xml  > build-log.txt
 
-      - name: Run tests with Maven
-        run: mvn test --fail-fast --batch-mode --show-version --errors --quiet --file pom.xml
+      # Carica i log come artefatti
+      - name: Upload build log
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-log
+          path: .github/build-log.txt
