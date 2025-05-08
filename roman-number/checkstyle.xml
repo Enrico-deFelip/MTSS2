@@ -14,6 +14,9 @@
         <module name="IllegalImport"/>
         <module name="NeedBraces"/>
 
+        <module name="MethodName">
+            <property name="format" value="^test([a-zA-Z0-9]+)*$"/>
+        </module>
         <module name="UnusedImports"/>
         <module name="Indentation"/>
     </module>
@@ -24,7 +27,7 @@
     </module>
     <module name="FileTabCharacter"/>
     <module name="Header">
-        <property name="headerFile" value="roman-number/java.header"/>
+        <property name="headerFile" value="java.header"/>
         <property name="fileExtensions" value="java"/>
     </module>
 </module>

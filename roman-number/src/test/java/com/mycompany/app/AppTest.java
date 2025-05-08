@@ -10,4 +10,5 @@ public class AppTest {
         App classUnderTest = new App();
         assertTrue("app should have a greeting", classUnderTest.getGreeting().length() > 0);
     }
+
 }
