@@ -1,10 +1,6 @@
 name: Java CI with Maven
 
-on:
-  pull_request:
-    branches: [dev, main]
-  push:
-    branches: [dev_local_test]
+on: [push]
 
 jobs:
   build:
@@ -17,6 +13,6 @@ jobs:
         with:
           java-version: '20'
           distribution: 'temurin'
-          cache: maven
+          cache: 'maven'
       - name: Build with Maven
         run: mvn -B install --fail-fast --batch-mode --show-version --file pom.xml
