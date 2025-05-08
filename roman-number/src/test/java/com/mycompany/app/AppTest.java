@@ -3,7 +3,6 @@ import static org.junit.Assert.assertTrue;
 
 public class AppTest {
     
-    @Deprecated
     @Test
     public void testAppHasAGreeting() {
         App classUnderTest = new App();
