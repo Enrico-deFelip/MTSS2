@@ -20,7 +20,7 @@
         <module name="UnusedImports"/>
         <module name="Indentation"/>
     </module>
-
+    
     <module name="FileLength"/>
     <module name="LineLength">
         <property name="max" value="120"/>
