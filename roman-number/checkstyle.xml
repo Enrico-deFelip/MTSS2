@@ -1,0 +1,33 @@
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <module name="TreeWalker">
+        <module name="BooleanExpressionComplexity"/>
+        <module name="CyclomaticComplexity"/>
+        <module name="MethodLength">
+            <property name="max" value="20"/>
+            <property name="countEmpty" value="false"/>
+        </module>
+        <module name="EmptyCatchBlock"/>
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="NeedBraces"/>
+
+        <module name="MethodName">
+            <property name="format" value="^test[A-Z]([a-zA-Z0-9]+)*$"/>
+        </module>
+        <module name="UnusedImports"/>
+        <module name="Indentation"/>
+    </module>
+
+    <module name="FileLength"/>
+    <module name="LineLength">
+        <property name="max" value="120"/>
+    </module>
+    <module name="FileTabCharacter"/>
+    <module name="Header">
+        <property name="headerFile" value="roman-number/java.header"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
+</module>
