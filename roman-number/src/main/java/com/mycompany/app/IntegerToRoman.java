@@ -7,7 +7,11 @@ package com.mycompany.app;
 
 public class IntegerToRoman {
     public static String Convert(int number){
-        // TODO
-        return null;
+        if (number > 0){
+            return "I" + Convert(number - 1);
+        }
+        else {
+            return "";
+        }
     }
 }
