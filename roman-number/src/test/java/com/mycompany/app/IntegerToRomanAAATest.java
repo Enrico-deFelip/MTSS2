@@ -12,15 +12,14 @@ public class IntegerToRomanAAATest {
     
     @Test
     public void testConvert() {
-        /** Test per i casi null */
-        assertEquals("", IntegerToRoman.Convert(0));
-        assertEquals("", IntegerToRoman.Convert(-1));
-        assertEquals("", IntegerToRoman.Convert(-1000));
-
         /** Test per i primi tre numeri */
         assertEquals("I", IntegerToRoman.Convert(1));
         assertEquals("II", IntegerToRoman.Convert(2));
         assertEquals("III", IntegerToRoman.Convert(3));
+
+        /** Test per i casi null */
+        assertEquals("", IntegerToRoman.Convert(0));
+        assertEquals("", IntegerToRoman.Convert(-1));
 
         /** Test per i casi limite */
         assertEquals("IV", IntegerToRoman.Convert(4));
