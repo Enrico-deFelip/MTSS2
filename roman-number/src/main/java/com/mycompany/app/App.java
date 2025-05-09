@@ -15,7 +15,7 @@ public class App {
         System.out.print("Inserisci un numero intero: ");
         Integer number = scanner.nextInt();
 
-        String romanNumeral = IntegerToRoman.Convert(number);
+        String romanNumeral = IntegerToRoman.convert(number);
         System.out.println("Il numero romano corrispondente è: " + romanNumeral);
 
         scanner.close();
