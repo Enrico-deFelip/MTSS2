@@ -5,12 +5,19 @@
 
 package com.mycompany.app;
 
+import java.util.Scanner;
+
 public class App {
-    public String getGreeting() {
-        return "Hello, World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Inserisci un numero intero: ");
+        Integer number = scanner.nextInt();
+
+        String romanNumeral = IntegerToRoman.Convert(number);
+        System.out.println("Il numero romano corrispondente è: " + romanNumeral);
+
+        scanner.close();
     }
 }
