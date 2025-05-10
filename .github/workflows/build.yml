@@ -54,8 +54,19 @@ jobs:
     - name: Spostare il report di copertura
       run: mv roman-number/target/site/jacoco/jacoco.xml .github/badge/
 
-    #- name: Genera il badge di copertua
-    #  run: 
+    - name: Badge Link Code Coverage JaCoCo 
+      id: jacoco_coverage
+      run: python3 .github/badge/CodeCoverage.py
+
+    - name: Badge Link Branches JaCoCo
+      id: jacoco_branches
+      run: python3 .github/badge/Branches.py
+
+
+    - name: JaCoCo Code Coverage Badge
+      run: |
+        sed -i '/Code Coverage JaCoCo/c\${{ steps.jacoco_coverage.outputs.badge }}' README.md
+        sed -i '/Branches JaCoCo/c\${{ steps.jacoco_branches.outputs.badge }}' README.md
 
     - name: Committa e pusha il badge aggiornato
       if: always()
