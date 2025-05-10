@@ -26,9 +26,12 @@ jobs:
         java-version: 17
         cache: 'maven'
 
-    - name: Badge, valori di default
+    - name: Default value Build Badge 
       run: |
         sed -i '/Build Status/c\Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)' README.md
+        
+    - name: Defualt value Validation Badge
+      run: |
         sed -i '/Analisi Statica/c\Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Failed-red)' README.md
 
     - name: Analisi statica con Maven
@@ -50,7 +53,6 @@ jobs:
         sed -i '/Validation-Failed-red/c\Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Success-green)' README.md
 
     - name: Spostare il report di copertura
-      if: always()
       run: mv roman-number/target/site/jacoco/jacoco.xml .github/badge/
 
     - name: Committa e pusha il badge aggiornato
