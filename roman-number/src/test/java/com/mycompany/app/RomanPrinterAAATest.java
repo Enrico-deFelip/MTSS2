@@ -11,11 +11,12 @@ import static org.junit.Assert.assertEquals;
 public class RomanPrinterAAATest {
     @Test
     public void testAsciiArt() {
-        String expectedAsciiArtFrom500 =  " _____  \n" +
+
+        String expectedAsciiArtFrom500 =  " _____  \n"  +
                                           "|  __ \\ \n" +
-                                          "| |  | |\n" +
-                                          "| |  | |\n" +
-                                          "| |__| |\n" +
+                                          "| |  | |\n"  +
+                                          "| |  | |\n"  +
+                                          "| |__| |\n"  +
                                           "|_____/ \n";
 
         assertEquals("\n" + expectedAsciiArtFrom500, RomanPrinter.print(500));
