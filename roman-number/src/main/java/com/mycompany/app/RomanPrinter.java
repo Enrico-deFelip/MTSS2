@@ -92,7 +92,6 @@ public class RomanPrinter {
             }
             result.append("\n"); // Aggiungi nuova linea alla fine di ogni riga
         }
-
         return result.toString();
     }
     
