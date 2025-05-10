@@ -26,6 +26,10 @@ jobs:
         java-version: 17
         cache: 'maven'
 
+    - name: Badge, valori di default
+      run: |
+        sed -i '/Build-Succes-green/c\"Build Status: ![Build Status](https://img.shields.io/badge/Build-Succes-green)"' README.md
+
     - name: Build with Maven
       id: maven_build
       run: mvn clean install --file roman-number/pom.xml
@@ -33,7 +37,7 @@ jobs:
     - name: Build Badge
       if: always() && steps.maven_build.outcome == 'success'
       run: |
-        sed -i '/Build-Failed-red/c\"Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)"'
+        sed -i '/Build-Failed-red/c\"Build Status: ![Build Status](https://img.shields.io/badge/Build-Succes-green)"' README.md
     
     - name: Spostare il report di copertura
       run: mv roman-number/target/site/jacoco/jacoco.xml .github/badge/
