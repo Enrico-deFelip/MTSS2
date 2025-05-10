@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 # Percorso del file XML
-filepath = "jacoco.xml"
+filepath = ".github\\badge\\jacoco.xml"
 
 # Funzione per estrarre i numeri dai nodi <counter> globali
 def extract_global_counters(filepath, counter_type):
