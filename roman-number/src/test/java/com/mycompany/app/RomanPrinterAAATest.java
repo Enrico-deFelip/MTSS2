@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class RomanPrinterAAATest {
     @Test
     public void testAsciiArt() {
+
         String expectedAsciiArtFrom500 =  " _____  \n"  +
                                           "|  __ \\ \n" +
                                           "| |  | |\n"  +
