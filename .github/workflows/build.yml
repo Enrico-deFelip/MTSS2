@@ -1,5 +1,8 @@
 name: Java CI with Maven
 
+permissions:
+  contents: write
+
 on:
   pull_request:
     branches:
@@ -16,11 +19,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up JDK 21
+    - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
-        java-version: 21.0.6
+        java-version: 17
         cache: 'maven'
     - name: Build with Maven
-      run: mvn -B install --file roman-number/pom.xml
+      run: mvn clean install --file roman-number/pom.xml
+
+    - name: Spostare il report di copertura
+      run: mv roman-number/target/site/jacoco/jacoco.xml .github/badge/
+
+    - name: Committa e pusha il badge aggiornato
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add .github/badge/jacoco.xml
+        git commit -m "Aggiornamento badge di copertura JaCoCo" || echo "Nessuna modifica da commettere"
+        git push
