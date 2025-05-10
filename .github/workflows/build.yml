@@ -28,12 +28,12 @@ jobs:
 
     - name: Badge, valori di default
       run: |
-        sed -i '/Build-Succes-green/c\Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)' README.md
-        sed -i '/Validation-Succes-green/c\Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Failed-red)' README.md
+        sed -i '/Build Status/c\Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)' README.md
+        sed -i '/Analisi Statica/c\Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Failed-red)' README.md
 
     - name: Analisi statica con Maven
       id: maven_analysis
-      run: mvn clean verify --file roman-number/pom.xml
+      run: mvn clean validate --file roman-number/pom.xml
 
     - name: Build with Maven
       id: maven_build
