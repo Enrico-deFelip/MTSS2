@@ -30,8 +30,8 @@ jobs:
       run: |
         sed -i '/Build Status/c\Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)' README.md
         sed -i '/Analisi Statica/c\Analisi Statica: ![Analisi Statica](https://img.shields.io/badge/Validation-Failed-red)' README.md
-        sed -i '/Code Coverage JaCoCo/c\Code Coverage JaCoCo: ![Coverage](https://img.shields.io/badge/Coverage-0%-red)' README.md
-        sed -i '/Branches JaCoCo/c\Branches JaCoCo: ![Branches](https://img.shields.io/badge/Branches-0%-red)' README.md
+        sed -i '/Code Coverage JaCoCo/c\Code Coverage JaCoCo: ![Coverage](https://img.shields.io/badge/Coverage-0-red)' README.md
+        sed -i '/Branches JaCoCo/c\Branches JaCoCo: ![Branches](https://img.shields.io/badge/Branches-0-red)' README.md
 
     - name: Analisi statica con Maven
       id: maven_analysis
