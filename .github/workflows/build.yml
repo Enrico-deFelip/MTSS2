@@ -27,6 +27,7 @@ jobs:
         cache: 'maven'
 
     - name: Badge, valori di default
+      if: always()
       run: |
         sed -i '/Build Status/c\Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)' README.md
         sed -i '/Analisi Statica/c\Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Failed-red)' README.md
