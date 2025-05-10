@@ -12,7 +12,7 @@ public class RomanPrinterAAATest {
     @Test
     public void testAsciiArt() {
 
-        String expectedAsciiArtFrom500 =  "d _____  \n"  +
+        String expectedAsciiArtFrom500 =  " _____  \n"  +
                                           "|  __ \\ \n" +
                                           "| |  | |\n"  +
                                           "| |  | |\n"  +
