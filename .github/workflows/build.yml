@@ -56,17 +56,22 @@ jobs:
 
     - name: Badge Link Code Coverage JaCoCo 
       id: jacoco_coverage
-      run: python3 .github/badge/CodeCoverage.py
+      run: |
+        value=$(python3 .github/badge/CodeCoverage.py)
+        link="${value}"
+        echo "generated_link=${link}" >> $GITHUB_OUTPUT
 
     - name: Badge Link Branches JaCoCo
       id: jacoco_branches
-      run: python3 .github/badge/Branches.py
-
+      run: |
+        value=$(python3 .github/badge/Branches.py)
+        link="${value}"
+        echo "generated_link=${link}" >> $GITHUB_OUTPUT
 
     - name: JaCoCo Code Coverage Badge
       run: |
-        sed -i '/Code Coverage JaCoCo/c\${{ steps.jacoco_coverage.outputs.badge }}' README.md
-        sed -i '/Branches JaCoCo/c\${{ steps.jacoco_branches.outputs.badge }}' README.md
+        sed -i '/Code Coverage JaCoCo/c\${{ steps.jacoco_coverage.outputs.generated_link }}' README.md
+        sed -i '/Branches JaCoCo/c\${{ steps.jacoco_branches.outputs.generated_link }}' README.md
 
     - name: Committa e pusha il badge aggiornato
       if: always()
