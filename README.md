@@ -3,8 +3,7 @@
 
 Analisi Statica: ![Analisi Statica](https://img.shields.io/badge/Validation-Success-green)
 
-Build Status: ![Build Status](https://img.shields.io/badge/Build-Success-green)
-
+Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)
 
 Code Coverage JaCoCo: ![Coverage](https://img.shields.io/badge/Coverage-0%-red)
 
