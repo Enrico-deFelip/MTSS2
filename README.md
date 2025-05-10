@@ -3,4 +3,4 @@
 
 Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Success-green)
 
-Build Status: ![Build Status](https://img.shields.io/badge/Build-Success-green)
+Build Status: ![Build Status](https://img.shields.io/badge/Build-Failed-red)
