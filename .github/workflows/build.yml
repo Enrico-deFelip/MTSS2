@@ -32,7 +32,7 @@ jobs:
         
     - name: Defualt value Validation Badge
       run: |
-        sed -i '/Analisi Statica/c\Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Failed-red)' README.md
+        sed -i '/Validation Status/c\Validation Status: ![Validation Status](https://img.shields.io/badge/Validation-Failed-red)' README.md
 
     - name: Analisi statica con Maven
       id: maven_analysis
